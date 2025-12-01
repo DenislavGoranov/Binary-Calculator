@@ -29,6 +29,27 @@ function calculations(num1, num2) {
     let [secondNumberStraightCode, secondCountForNormalization] = findStraightCode(secondNumberToUse, num2);
 
     let [thirdNumberStraightCode, thirdCountForNormalization] = findStraightCode(thirdNumberToUse, num3);
+
+    if (num1 < 0) {
+        let firstNumberReversedCode =  findReversedCode(firstNumberStraightCode);
+        firstNumberAdditionalCode = findAdditionalCode(firstNumberReversedCode)
+    } else {
+        firstNumberAdditionalCode = firstNumberStraightCode;
+    }
+
+    if (num2 < 0) {
+        let secondNumberReversedCode = findReversedCode(secondNumberStraightCode);
+        secondNumberAdditionalCode = findAdditionalCode(secondNumberReversedCode)
+    } else {
+        secondNumberAdditionalCode = secondNumberStraightCode;
+    }
+    
+    if (num3 < 0) {
+        let thirdNumberReversedCode = findReversedCode(thirdNumberStraightCode);
+        thirdNumberAdditionalCode = findAdditionalCode(thirdNumberReversedCode)
+    } else {
+        thirdNumberAdditionalCode = thirdNumberStraightCode;
+    }
 }
 
 function findStraightCode(positiveNumber, originalNumber) {
