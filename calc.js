@@ -147,6 +147,13 @@ function calculations(num1, num2) {
         }
     }
     console.log(resultAdditionalCode);
+
+    if (resultAdditionalCode[0] == 1) {
+        let resultReversedCode = findReversedCode(resultAdditionalCode);
+        let resultStraightCode = findAdditionalCode(resultReversedCode);
+        resultAdditionalCode = resultStraightCode;
+    }
+    console.log(`The result is: ${resultAdditionalCode.join(" ")}`);
 }
 
 function findStraightCode(positiveNumber, originalNumber) {
