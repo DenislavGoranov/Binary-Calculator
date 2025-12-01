@@ -54,6 +54,20 @@ function calculations(num1, num2) {
     let DmNormalization = normalization(firstNumberAdditionalCode, firstCountForNormalization);
     let DtNormalization = normalization(secondNumberAdditionalCode, secondCountForNormalization);
     let minusDtNormalization = normalization(thirdNumberAdditionalCode, thirdCountForNormalization);
+
+    const N = secondCountForNormalization - firstCountForNormalization + 1;
+    let knownNumbers = bit - N;
+    var resultAdditionalCode = [];
+
+    if (num1 / num2 > 0) {
+        for (let i = 0; i < knownNumbers; i++) {
+            resultAdditionalCode[i] = 0;
+        }
+    } else {
+        for (let i = 0; i < knownNumbers; i++) {
+            resultAdditionalCode[i] = 1;
+        }
+    }
 }
 
 function findStraightCode(positiveNumber, originalNumber) {
