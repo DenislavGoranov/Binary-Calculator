@@ -68,6 +68,41 @@ function calculations(num1, num2) {
             resultAdditionalCode[i] = 1;
         }
     }
+
+    let searchedNumbers = [];
+    let result = [];
+    for (let i = 0; i < N; i++) {
+        if (i == 0) {
+            [operation, numberLookedFor] = whatOperationWeDo(num2, DmNormalization);
+            if (operation == 1) {
+                result = binarySummary(DmNormalization, minusDtNormalization);
+            } else {
+                result = binarySummary(DmNormalization, DtNormalization);
+            }
+            var [operation, numberLookedFor] = whatOperationWeDo(num2, result);
+            searchedNumbers.push(numberLookedFor);
+            result = normalization(result, 1);
+            
+        } else {
+            if (operation == 1) {
+                result = binarySummary(result, minusDtNormalization);
+                [operation, numberLookedFor] = whatOperationWeDo(num2, result);
+                searchedNumbers.push(numberLookedFor);
+                result = normalization(result, 1);
+            } else if (operation == 0) {
+                result = binarySummary(result, DtNormalization);
+                [operation, numberLookedFor] = whatOperationWeDo(num2, result);
+                searchedNumbers.push(numberLookedFor);
+                result = normalization(result, 1);
+            }
+            isTrue = tochnoDelenie(result);
+            if (isTrue == 0) {
+                rezultatNakraq = result;
+                break;
+            }
+        }
+        rezultatNakraq = result;
+    }
 }
 
 function findStraightCode(positiveNumber, originalNumber) {
