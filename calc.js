@@ -16,3 +16,17 @@ var thirdNumberAdditionalCode = [];
 
 //     calculations(num1, num2);
 // }
+
+calculations(-223, 23)
+function calculations(num1, num2) {
+    let firstNumberToUse = Math.abs(num1);
+    let secondNumberToUse = Math.abs(num2);
+    let num3 = num2 * -1;
+    let thirdNumberToUse = Math.abs(num3);
+
+    let [firstNumberStraightCode, firstCountForNormalization] = findStraightCode(firstNumberToUse, num1);
+    
+    let [secondNumberStraightCode, secondCountForNormalization] = findStraightCode(secondNumberToUse, num2);
+
+    let [thirdNumberStraightCode, thirdCountForNormalization] = findStraightCode(thirdNumberToUse, num3);
+}
