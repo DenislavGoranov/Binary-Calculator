@@ -103,6 +103,50 @@ function calculations(num1, num2) {
         }
         rezultatNakraq = result;
     }
+
+    resultAdditionalCode = resultAdditionalCode.concat(searchedNumbers);
+    console.log(resultAdditionalCode);
+    let correctionNumbers = [];
+    for (let i = 0; i < resultAdditionalCode.length; i++) {
+        if (i == resultAdditionalCode.length - 1) {
+            correctionNumbers[i] = 1;
+        } else {
+            correctionNumbers[i] = 0;
+        }
+    }
+
+    if (num1 > 0 && num2 < 0) {
+        resultAdditionalCode = binarySummary(resultAdditionalCode, correctionNumbers);
+    } else if (num1 < 0 && num2 > 0) {
+        let isEqualToZero = 0;
+        for (let i = 0; i < rezultatNakraq.length; i++) {
+            if (rezultatNakraq[i] == 1) {
+                isEqualToZero = 1;
+                break;
+            } 
+        }
+        if (isEqualToZero == 1) {
+            resultAdditionalCode = binarySummary(resultAdditionalCode, correctionNumbers);
+        }
+    } else if (num1 < 0 && num2 < 0) {
+        let isEqualToZero = 0;
+        for (let i = 0; i < rezultatNakraq.length; i++) {
+            if (rezultatNakraq[i] == 1) {
+                isEqualToZero = 1;
+                break;
+            }
+        } 
+        if (isEqualToZero == 0) {
+            resultAdditionalCode = binarySummary(resultAdditionalCode, correctionNumbers);
+        }
+    }
+    
+    if (resultAdditionalCode.length < bit) {
+        for (let i = resultAdditionalCode.length; i < bit; i++) {
+            resultAdditionalCode.push(0);
+        }
+    }
+    console.log(resultAdditionalCode);
 }
 
 function findStraightCode(positiveNumber, originalNumber) {
