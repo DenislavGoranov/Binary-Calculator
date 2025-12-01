@@ -1,4 +1,4 @@
-# Binary-Calculator ➕➖✖️➗
+# Binary Calculator ➕➖✖️➗
 ## 💻 Tech Stack
 
 Languages: HTML, CSS, JS
