@@ -50,6 +50,10 @@ function calculations(num1, num2) {
     } else {
         thirdNumberAdditionalCode = thirdNumberStraightCode;
     }
+
+    let DmNormalization = normalization(firstNumberAdditionalCode, firstCountForNormalization);
+    let DtNormalization = normalization(secondNumberAdditionalCode, secondCountForNormalization);
+    let minusDtNormalization = normalization(thirdNumberAdditionalCode, thirdCountForNormalization);
 }
 
 function findStraightCode(positiveNumber, originalNumber) {
