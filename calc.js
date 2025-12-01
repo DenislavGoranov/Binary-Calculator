@@ -50,11 +50,10 @@ function calculations(num1, num2) {
     } else {
         thirdNumberAdditionalCode = thirdNumberStraightCode;
     }
-
+    
     let DmNormalization = normalization(firstNumberAdditionalCode, firstCountForNormalization);
     let DtNormalization = normalization(secondNumberAdditionalCode, secondCountForNormalization);
     let minusDtNormalization = normalization(thirdNumberAdditionalCode, thirdCountForNormalization);
-
     const N = secondCountForNormalization - firstCountForNormalization + 1;
     let knownNumbers = bit - N;
     var resultAdditionalCode = [];
@@ -103,7 +102,6 @@ function calculations(num1, num2) {
         }
         rezultatNakraq = result;
     }
-
     resultAdditionalCode = resultAdditionalCode.concat(searchedNumbers);
     console.log(resultAdditionalCode);
     let correctionNumbers = [];
@@ -147,7 +145,6 @@ function calculations(num1, num2) {
         }
     }
     console.log(resultAdditionalCode);
-
     if (resultAdditionalCode[0] == 1) {
         let resultReversedCode = findReversedCode(resultAdditionalCode);
         let resultStraightCode = findAdditionalCode(resultReversedCode);
