@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    color: rgb(255, 255, 255);
+    font-size: 3em;
+    text-align: center;
+    letter-spacing: 1.5px;
+    margin-top: 1.3em;
+    margin-bottom: 1.3em;
+}
+body {
+    margin: 1em 0 6em 0;
+    background: linear-gradient(135deg, #49c6b8, #6f3fc9, #4d99c2);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    
+}
+
+nav a {
+    margin: 0 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+nav a:hover {
+    outline: 1px solid rgb(174, 174, 232);
+    border-radius: 15px;
+}
+
+
+form {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 50px 0;
+    height: 503px;
+    width: 600px;
+    gap: 50px;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    border: 1px solid rgb(123, 122, 122);
+    padding: 15px;
+    border-radius: 15px;
+    width: 350px;
+}
+
+input[type="text"]:hover {
+    border: 1px solid rgb(60, 60, 60);
+}
+
+input[type="text"]:focus,
+input[type="text"]:active {
+    border: 1px solid rgb(56, 56, 56);
+    outline: none;
+}
+
+.operations {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.operations button {
+    border: 1px solid rgb(155, 146, 146);
+    padding: 23px 50px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.operations button:hover {
+    transition: all 0.2s ease;
+    border: 1px solid rgb(121, 121, 121);
+    background-color: rgb(239, 239, 239);
+}
+
+.operations button:nth-child(3) {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.operations button:nth-child(1) {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+input[type="submit"] {
+    position: relative;
+    left: 115px;
+    width: 150px;
+    border: none;
+    background-color: rgb(114, 141, 222);
+    color: white;
+    font-size: 1.2em;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(127, 127, 231);
+    transition: all 0.2s ease;
+}
