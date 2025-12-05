@@ -99,16 +99,17 @@ input[type="text"]:active {
 }
 
 .operations {
-    display: flex;
-    flex-direction: row;
-    font-size: 1.2em;
-    font-weight: bold;
+    display: inline;
 }
 
-.operations button {
+.operations input[type="radio"] {
+    transform: scale(2);
+    margin: 10px;
     border: 1px solid rgb(155, 146, 146);
     padding: 30px 50px;
     margin-top: 20px;
+    margin-right: 70px;
+    margin-left: 20px;
     background-color: white;
 }
 

@@ -12,7 +12,8 @@ This makes it useful both for quick calculations and for learning how binary ari
 
 ### TODO
 1. Controlled forms
-2. New Icons for operations
-3. Knowing which operation doing
-4. Submitting the calculator form
-5. Animation with explanations how its happening
+2. Operation choice fix
+3. New Icons for operations
+4. Knowing which operation doing
+5. Submitting the calculator form
+6. Animation with explanations how its happening

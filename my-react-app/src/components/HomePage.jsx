@@ -14,9 +14,12 @@ export default function HomePage() {
                 </div>
 
                 <div className="operations">
-                    <button><i className="fa-solid fa-plus"></i></button>
-                    <button><i className="fa-solid fa-xmark"></i></button>
-                    <button><i className="fa-solid fa-divide"></i></button>
+                    <label htmlFor="plus">Plus</label>
+                    <input type="radio" name="operation" defaultChecked />
+                    <label htmlFor="multiply">Multiply</label>
+                    <input type="radio" name="operation" />
+                    <label htmlFor="divide">Divide</label>
+                    <input type="radio" name="operation" />
                 </div>
 
                 <div>
