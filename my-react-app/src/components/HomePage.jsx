@@ -10,11 +10,11 @@ export default function HomePage() {
     const { values, onChange, submitHandler } = useForm(
         { value1: 0, value2: 0, operation: "plus" },
         async ({ value1, value2, operation }) => {
-            localStorage.setItem("value1", value1);
-            localStorage.setItem("value2", value2);
-            localStorage.setItem("operation", operation);
-            localStorage.setItem("bits", findBits(value1, value2));
-
+            const v1 = Number(value1);
+            const v2 = Number(value2);
+            const bits = findBits(v1, v2);
+            const calcData = { value1: v1, value2: v2, operation, bits };
+            localStorage.setItem("calcData", JSON.stringify(calcData));
             navigate("/result")
         }
     )
