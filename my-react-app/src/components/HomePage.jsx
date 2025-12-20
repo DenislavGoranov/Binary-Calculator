@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import Header from "./Header";
 import useForm from "../hooks/useForm"
 
+import findBits from "../utils/findBits";
 export default function HomePage() {
-    localStorage.clear();
     const navigate = useNavigate();
 
     const { values, onChange, submitHandler } = useForm(
@@ -13,6 +13,8 @@ export default function HomePage() {
             localStorage.setItem("value1", value1);
             localStorage.setItem("value2", value2);
             localStorage.setItem("operation", operation);
+            localStorage.setItem("bits", findBits(value1, value2));
+
             navigate("/result")
         }
     )
