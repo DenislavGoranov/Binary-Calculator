@@ -1,7 +1,7 @@
 # Binary Calculator ➕➖✖️➗
 ## 💻 Tech Stack
 
-Languages: HTML, CSS, JS
+Languages: React, HTML, CSS, JS
 
 
 ## 📌 About This Project
