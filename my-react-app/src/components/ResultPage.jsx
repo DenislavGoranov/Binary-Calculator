@@ -1,10 +1,8 @@
 import Header from "./Header";
 
+import useCalcData from "../hooks/useCalcData";
 export default function ResultPage() {
-    const data = JSON.parse(localStorage.getItem("calcData") || "{}");
-
-    console.log(data);
-
+    const [calcData] = useCalcData();
     return (
         <div className="page">
             <Header />

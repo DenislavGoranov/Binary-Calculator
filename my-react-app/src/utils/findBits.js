@@ -12,14 +12,14 @@ export default function findBits(num1, num2) {
     
     let secondNumberBits = findStraightCode(secondNumberToUse, number2);
     
-    let thirdNumberBits = findStraightCode(thirdNumberToUse, result);
+    let resultNumberBits = findStraightCode(thirdNumberToUse, result);
     
-    if (firstNumberBits >= secondNumberBits && firstNumberBits >= thirdNumberBits) {
+    if (firstNumberBits >= secondNumberBits && firstNumberBits >= resultNumberBits) {
         return firstNumberBits;
-    } else if (secondNumberBits >= firstNumberBits && secondNumberBits >= thirdNumberBits) {
+    } else if (secondNumberBits >= firstNumberBits && secondNumberBits >= resultNumberBits) {
         return secondNumberBits;
     } else {
-        return thirdNumberBits;
+        return resultNumberBits;
     }
 }
 
