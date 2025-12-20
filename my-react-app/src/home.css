@@ -83,9 +83,10 @@ label {
 
 input[type="text"] {
     border: 1px solid rgb(123, 122, 122);
-    padding: 20px;
+    padding: 25px;
     border-radius: 15px;
     width: 400px;
+    font-size: 20px;
 }
 
 input[type="text"]:hover {
