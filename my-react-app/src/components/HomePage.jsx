@@ -1,12 +1,19 @@
+import { useNavigate } from 'react-router-dom'
+
 import Header from "./Header";
 import useForm from "../hooks/useForm"
+
 export default function HomePage() {
+    localStorage.clear();
+    const navigate = useNavigate();
+
     const { values, onChange, submitHandler } = useForm(
         { value1: 0, value2: 0, operation: "plus" },
         async ({ value1, value2, operation }) => {
-            const a = Number(value1);
-            const b = Number(value2);
-
+            localStorage.setItem("value1", value1);
+            localStorage.setItem("value2", value2);
+            localStorage.setItem("operation", operation);
+            navigate("/result")
         }
     )
     return (
