@@ -20,7 +20,7 @@ export default function findStraightCode(positiveNumber, originalNumber, bits) {
 
     if (originalNumber > 0) {
         straightCode.unshift(0);
-    } else {
+    } else if (originalNumber < 0){
         straightCode.unshift(1);
     }
     return [straightCode, countForNormalization];
