@@ -18,7 +18,17 @@ export default function ResultPage() {
             {calcData.operation === 'plus' ? (
                 <PlusPage />
             ) : (
-                <MinusPage />
+                <div>mistake</div>
+            )}
+            {calcData.operation === 'multiply' ? (
+                <MultiplyPage />
+            ) : (
+                <div>mistake</div>
+            )}
+            {calcData.operation === 'divide' ? (
+                <DividePage />
+            ) : (
+                <div>mistake</div>
             )}
         </div>
     );
