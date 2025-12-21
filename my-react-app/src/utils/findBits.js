@@ -1,5 +1,4 @@
 export default function findBits(num1, num2) {
-    localStorage.clear();
     let number1 = Number(num1);
     let number2 = Number(num2);
     let firstNumberToUse = Math.abs(number1);

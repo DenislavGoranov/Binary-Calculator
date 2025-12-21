@@ -2,7 +2,7 @@ import findStraightCode from "./findStraightCode.js";
 import findReversedCode from "./findReversedCode.js";
 import findAdditionalCode from "./findAdditionalCode.js";
 
-export default function binarySummary(num1, num2, bit) {
+export default function binarySummary(num1, num2, bits) {
 
     let firstNumberAdditionalCode = [];
     let secondNumberAdditionalCode = [];
@@ -12,43 +12,43 @@ export default function binarySummary(num1, num2, bit) {
     let num3 = num2 * -1;
     let thirdNumberToUse = Math.abs(num3);
 
-    let [firstNumberStraightCode] = findStraightCode(firstNumberToUse, num1, bit);
+    let [firstNumberStraightCode] = findStraightCode(firstNumberToUse, num1, bits);
         
-    let [secondNumberStraightCode] = findStraightCode(secondNumberToUse, num2, bit);
+    let [secondNumberStraightCode] = findStraightCode(secondNumberToUse, num2, bits);
 
-    let [thirdNumberStraightCode] = findStraightCode(thirdNumberToUse, num3, bit);
+    let [thirdNumberStraightCode] = findStraightCode(thirdNumberToUse, num3, bits);
 
     if (num1 < 0) {
         let firstNumberReversedCode =  findReversedCode(firstNumberStraightCode);
-        firstNumberAdditionalCode = findAdditionalCode(firstNumberReversedCode, bit)
+        firstNumberAdditionalCode = findAdditionalCode(firstNumberReversedCode, bits)
     } else {
         firstNumberAdditionalCode = firstNumberStraightCode;
     }
 
     if (num2 < 0) {
         let secondNumberReversedCode = findReversedCode(secondNumberStraightCode);
-        secondNumberAdditionalCode = findAdditionalCode(secondNumberReversedCode, bit)
+        secondNumberAdditionalCode = findAdditionalCode(secondNumberReversedCode, bits)
     } else {
         secondNumberAdditionalCode = secondNumberStraightCode;
     }
         
     if (num3 < 0) {
         let thirdNumberReversedCode = findReversedCode(thirdNumberStraightCode);
-        thirdNumberAdditionalCode = findAdditionalCode(thirdNumberReversedCode, bit)
+        thirdNumberAdditionalCode = findAdditionalCode(thirdNumberReversedCode, bits)
     } else {
         thirdNumberAdditionalCode = thirdNumberStraightCode;
     }
 
-    let result = sum(firstNumberAdditionalCode, secondNumberAdditionalCode, bit);
+    let result = sum(firstNumberAdditionalCode, secondNumberAdditionalCode, bits);
 
     return result;
 }
 
-function sum(firstNumberAdditionalCode, secondNumberAdditionalCode, bit) {
+function sum(firstNumberAdditionalCode, secondNumberAdditionalCode, bits) {
     let result = [];
     let prenos = 0;
 
-    for (let i = bit - 1; i >= 0; i--) {
+    for (let i = bits - 1; i >= 0; i--) {
         if (firstNumberAdditionalCode[i] == 1 && secondNumberAdditionalCode[i] == 1) {
             if (prenos == 0) {
                 result[i] = 0;

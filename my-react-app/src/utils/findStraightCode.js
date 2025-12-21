@@ -1,4 +1,4 @@
-export default function findStraightCode(positiveNumber, originalNumber, bit) {
+export default function findStraightCode(positiveNumber, originalNumber, bits) {
     let countForNormalization = 0;
     let straightCode = [];
     while (positiveNumber != 0) {
@@ -13,7 +13,7 @@ export default function findStraightCode(positiveNumber, originalNumber, bit) {
     
     straightCode.reverse();
     
-    while (straightCode.length < bit - 1) {
+    while (straightCode.length < bits - 1) {
         straightCode.unshift(0);
         countForNormalization++;
     }

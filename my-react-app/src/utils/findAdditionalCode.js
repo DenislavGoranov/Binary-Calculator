@@ -1,6 +1,6 @@
- export default function findAdditionalCode(reversedCode, bit) {
+ export default function findAdditionalCode(reversedCode, bits) {
     let prenos = 1;
-    for (let i = bit - 1; i >= 0; i--) {
+    for (let i = bits - 1; i >= 0; i--) {
         if (reversedCode[i] == 0 && prenos == 1) {
             reversedCode[i] = 1;
             break;
