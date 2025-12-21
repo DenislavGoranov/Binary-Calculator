@@ -40,7 +40,11 @@ export default function binarySummary(num1, num2, bits) {
     }
 
     let result = sum(firstNumberAdditionalCode, secondNumberAdditionalCode, bits);
-
+    if (num1 + num2 < 0) {
+        let resultReversedCode = findReversedCode(result);
+        let resultStraightCode = result = findAdditionalCode(resultReversedCode ,bits);
+        return resultStraightCode;
+    }
     return result;
 }
 
