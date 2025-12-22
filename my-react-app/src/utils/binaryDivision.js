@@ -5,7 +5,8 @@ import whatBinaryOperationWeDoing from "./whatBinaryOperationDoing";
 import binaryMoving from "./binaryMoving";
 import exactDivision from "./exactDivision";
 import binarySummaryBinaryNumbers from "./binarySummaryBinaryNumbers";
-
+// BUGS : 44 / -44 = ?
+ 
 export default function binaryDivision(num1, num2, bits) {
     let rezultatNakraq = [];
     let isTrue;
@@ -20,32 +21,34 @@ export default function binaryDivision(num1, num2, bits) {
     let [firstNumberStraightCode, firstCountForNormalization] = findStraightCode(firstNumberToUse, num1, bits);
     
     let [secondNumberStraightCode, secondCountForNormalization] = findStraightCode(secondNumberToUse, num2, bits);
-
+    
     let [thirdNumberStraightCode, thirdCountForNormalization] = findStraightCode(thirdNumberToUse, num3, bits);
-
     if (num1 < 0) {
         let firstNumberReversedCode =  findReversedCode(firstNumberStraightCode);
-        firstNumberAdditionalCode = findAdditionalCode(firstNumberReversedCode)
+        firstNumberAdditionalCode = findAdditionalCode(firstNumberReversedCode, bits)
     } else {
         firstNumberAdditionalCode = firstNumberStraightCode;
     }
 
     if (num2 < 0) {
         let secondNumberReversedCode = findReversedCode(secondNumberStraightCode);
-        secondNumberAdditionalCode = findAdditionalCode(secondNumberReversedCode)
+        secondNumberAdditionalCode = findAdditionalCode(secondNumberReversedCode, bits)
     } else {
         secondNumberAdditionalCode = secondNumberStraightCode;
     }
     
     if (num3 < 0) {
         let thirdNumberReversedCode = findReversedCode(thirdNumberStraightCode);
-        thirdNumberAdditionalCode = findAdditionalCode(thirdNumberReversedCode)
+        thirdNumberAdditionalCode = findAdditionalCode(thirdNumberReversedCode, bits)
     } else {
         thirdNumberAdditionalCode = thirdNumberStraightCode;
     }
+    
+
     let DmNormalization = binaryMoving(firstNumberAdditionalCode, firstCountForNormalization);
     let DtNormalization = binaryMoving(secondNumberAdditionalCode, secondCountForNormalization);
     let minusDtNormalization = binaryMoving(thirdNumberAdditionalCode, thirdCountForNormalization);
+    
     const N = secondCountForNormalization - firstCountForNormalization + 1;
     let knownNumbers = bits - N;
     var resultAdditionalCode = [];
@@ -89,12 +92,14 @@ export default function binaryDivision(num1, num2, bits) {
             isTrue = exactDivision(result);
             if (isTrue == 0) {
                 rezultatNakraq = result;
+                console.log(rezultatNakraq);
                 break;
             }
         }
         rezultatNakraq = result;
     }
     resultAdditionalCode = resultAdditionalCode.concat(searchedNumbers);
+    
     let correctionNumbers = [];
     for (let i = 0; i < resultAdditionalCode.length; i++) {
         if (i == resultAdditionalCode.length - 1) {
