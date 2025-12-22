@@ -3,8 +3,8 @@ import findReversedCode from "./findReversedCode";
 import findAdditionalCode from "./findAdditionalCode";
 import whatBinaryOperationWeDoing from "./whatBinaryOperationDoing";
 import binaryMoving from "./binaryMoving";
-import binarySummary from "./binarySummary";
 import exactDivision from "./exactDivision";
+import binarySummaryBinaryNumbers from "./binarySummaryBinaryNumbers";
 
 export default function binaryDivision(num1, num2, bits) {
     let rezultatNakraq = [];
@@ -66,12 +66,9 @@ export default function binaryDivision(num1, num2, bits) {
         if (i == 0) {
             [operation, numberLookedFor] = whatBinaryOperationWeDoing(num2, DmNormalization);
             if (operation == 1) {
-                debugger;
-                result = binarySummary(DmNormalization, minusDtNormalization, bits);
-                console.log(result);
-                
+                result = binarySummaryBinaryNumbers(DmNormalization, minusDtNormalization, bits);
             } else {
-                result = binarySummary(DmNormalization, DtNormalization, bits);
+                result = binarySummaryBinaryNumbers(DmNormalization, DtNormalization, bits);
             }
             var [operation, numberLookedFor] = whatBinaryOperationWeDoing(num2, result);
             searchedNumbers.push(numberLookedFor);
@@ -79,12 +76,12 @@ export default function binaryDivision(num1, num2, bits) {
             
         } else {
             if (operation == 1) {
-                result = binarySummary(result, minusDtNormalization, bits);
+                result = binarySummaryBinaryNumbers(result, minusDtNormalization, bits);
                 [operation, numberLookedFor] = whatBinaryOperationWeDoing(num2, result);
                 searchedNumbers.push(numberLookedFor);
                 result = binaryMoving(result, 1);
             } else if (operation == 0) {
-                result = binarySummary(result, DtNormalization, bits);
+                result = binarySummaryBinaryNumbers(result, DtNormalization, bits);
                 [operation, numberLookedFor] = whatBinaryOperationWeDoing(num2, result);
                 searchedNumbers.push(numberLookedFor);
                 result = binaryMoving(result, 1);
@@ -108,7 +105,7 @@ export default function binaryDivision(num1, num2, bits) {
     }
 
     if (num1 > 0 && num2 < 0) {
-        resultAdditionalCode = binarySummary(resultAdditionalCode, correctionNumbers, bits);
+        resultAdditionalCode = binarySummaryBinaryNumbers(resultAdditionalCode, correctionNumbers, bits);
     } else if (num1 < 0 && num2 > 0) {
         let isEqualToZero = 0;
         for (let i = 0; i < rezultatNakraq.length; i++) {
@@ -118,7 +115,7 @@ export default function binaryDivision(num1, num2, bits) {
             } 
         }
         if (isEqualToZero == 1) {
-            resultAdditionalCode = binarySummary(resultAdditionalCode, correctionNumbers, bits);
+            resultAdditionalCode = binarySummaryBinaryNumbers(resultAdditionalCode, correctionNumbers, bits);
         }
     } else if (num1 < 0 && num2 < 0) {
         let isEqualToZero = 0;
@@ -129,7 +126,7 @@ export default function binaryDivision(num1, num2, bits) {
             }
         } 
         if (isEqualToZero == 0) {
-            resultAdditionalCode = binarySummary(resultAdditionalCode, correctionNumbers, bits);
+            resultAdditionalCode = binarySummaryBinaryNumbers(resultAdditionalCode, correctionNumbers, bits);
         }
     }
     
@@ -138,7 +135,6 @@ export default function binaryDivision(num1, num2, bits) {
             resultAdditionalCode.push(0);
         }
     }
-    console.log(resultAdditionalCode);
     if (resultAdditionalCode[0] == 1) {
         let resultReversedCode = findReversedCode(resultAdditionalCode);
         let resultStraightCode = findAdditionalCode(resultReversedCode);

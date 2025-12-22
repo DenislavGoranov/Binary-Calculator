@@ -1,7 +1,6 @@
 export default function findStraightCode(positiveNumber, originalNumber, bits) {
     let countForNormalization = 0;
     let straightCode = [];
-    debugger;
     while (positiveNumber != 0) {
         if (positiveNumber % 2 == 0) {
             straightCode.push(0);
