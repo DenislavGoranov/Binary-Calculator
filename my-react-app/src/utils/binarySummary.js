@@ -11,7 +11,6 @@ export default function binarySummary(num1, num2, bits) {
     let secondNumberToUse = Math.abs(num2);
     let num3 = num2 * -1;
     let thirdNumberToUse = Math.abs(num3);
-
     let [firstNumberStraightCode] = findStraightCode(firstNumberToUse, num1, bits);
         
     let [secondNumberStraightCode] = findStraightCode(secondNumberToUse, num2, bits);
