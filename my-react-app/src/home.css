@@ -34,7 +34,6 @@ nav ul {
     display: flex;
     flex-direction: row;
     list-style: none;
-    
 }
 
 nav a {
@@ -98,6 +97,8 @@ input[type="text"]:active {
 }
 
 .operations {
+    position: relative;
+    left: 20px;
     display: inline;
 }
 

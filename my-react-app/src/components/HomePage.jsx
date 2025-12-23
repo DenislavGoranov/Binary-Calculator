@@ -4,15 +4,21 @@ import Header from "./Header";
 import useForm from "../hooks/useForm"
 
 import findBits from "../utils/findBits";
+import findBitsDivision from '../utils/findBitsDivision';
 export default function HomePage() {
     const navigate = useNavigate();
 
     const { values, onChange, submitHandler } = useForm(
         { value1: 0, value2: 0, operation: "plus" },
         async ({ value1, value2, operation }) => {
+            let bits;
             const v1 = Number(value1);
             const v2 = Number(value2);
-            const bits = findBits(v1, v2);
+            if (operation == "plus") {
+                bits = findBits(v1, v2);
+            } else if (operation == "divide") {
+                bits = findBitsDivision(v1, v2);
+            }
             const calcData = { value1: v1, value2: v2, operation, bits };
             localStorage.setItem("calcData", JSON.stringify(calcData));
             navigate("/result")
@@ -29,7 +35,6 @@ export default function HomePage() {
                     <label htmlFor="value1">Value 1</label>
                     <input type="text" name="value1" autoComplete="value1" onChange={onChange} value={values.value1} />
                 </div>
-
                 <div className="operations">
                     <label htmlFor="plus">Plus</label>
                     <input type="radio" name="operation" autoComplete="plus" onChange={onChange} value={"plus"} checked={values.operation === "plus"} />
