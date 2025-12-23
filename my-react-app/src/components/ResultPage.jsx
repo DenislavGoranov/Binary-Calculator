@@ -8,7 +8,7 @@ export default function ResultPage() {
         <div className="page">
             <Header />
 
-            <DividePage />
+            <PlusPage />
         </div>
     );
 }

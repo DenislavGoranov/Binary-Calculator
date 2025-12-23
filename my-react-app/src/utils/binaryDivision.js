@@ -44,7 +44,6 @@ export default function binaryDivision(num1, num2, bits) {
         thirdNumberAdditionalCode = thirdNumberStraightCode;
     }
     
-
     let DmNormalization = binaryMoving(firstNumberAdditionalCode, firstCountForNormalization);
     let DtNormalization = binaryMoving(secondNumberAdditionalCode, secondCountForNormalization);
     let minusDtNormalization = binaryMoving(thirdNumberAdditionalCode, thirdCountForNormalization);
@@ -134,7 +133,6 @@ export default function binaryDivision(num1, num2, bits) {
             resultAdditionalCode = binarySummaryBinaryNumbers(resultAdditionalCode, correctionNumbers, bits);
         }
     }
-    
     if (resultAdditionalCode.length < bits) {
         for (let i = resultAdditionalCode.length; i < bits; i++) {
             resultAdditionalCode.push(0);
@@ -142,7 +140,7 @@ export default function binaryDivision(num1, num2, bits) {
     }
     if (resultAdditionalCode[0] == 1) {
         let resultReversedCode = findReversedCode(resultAdditionalCode);
-        let resultStraightCode = findAdditionalCode(resultReversedCode);
+        let resultStraightCode = findAdditionalCode(resultReversedCode, bits);
         resultAdditionalCode = resultStraightCode;
     }
     return resultAdditionalCode;
